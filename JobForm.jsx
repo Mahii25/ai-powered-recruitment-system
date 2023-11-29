@@ -18,6 +18,7 @@ const JobForm = () => {
     form.append("jobDesc", formData.jobDesc);
     form.append("skills", formData.skills);
     console.log(formData);
+    setFormData({...formData, formData.jobTitle: "", formData.jobType: "", formData.jobDesc: "", formData.skills: "" });
     try {
       const res = await fetch("", { // api calls
         method: "POST",
