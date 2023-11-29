@@ -1,9 +1,20 @@
 import React from "react";
-import bot from "../assets/Images/bot.jpg";
+import bot from "../assets/Images/bot.jpg"; // company logo
 import JobSection from "./JobSection";
 
 const CareerPage = ({ data }) => {
-  const { companyName, shortDesc, jobs } = data;
+  const { companyName, shortDesc, jobs } = data; 
+  // data structure
+  /* data : {
+    "companyName": "Microsoft",
+    "shortDesc": "loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem loremlorem lorem",
+    "jobs" : [
+        {
+            "name": "MERN Stack",
+            "jobType": "Full Time",
+            "skills" : "Reactjs, nodejs, mern stack, frontend, backend"
+        },
+      } */
   return (
     <div className="container-lg py-2">
       <div className="row">
