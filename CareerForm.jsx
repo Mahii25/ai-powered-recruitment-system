@@ -11,15 +11,12 @@ const CareerForm = () => {
     form.append("description", formData.description);
     console.log(formData);
     try {
-      const res = await fetch("", { // api call
-        method: "POST",
-        body: form,
-      });
-      if (res.ok) {
-        console.log("form sent");
-      } else {
-        console.log("error");
-      }
+      const res = await axios.post('api-call', form); // api-call
+    if (res.status === 200) {
+      console.log('Form sent');
+    } else {
+      console.log('Error');
+    }
     } catch (err) {
       console.error("Error", err);
     }
