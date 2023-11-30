@@ -20,15 +20,12 @@ const JobForm = () => {
     console.log(formData);
     setFormData({...formData, formData.jobTitle: "", formData.jobType: "", formData.jobDesc: "", formData.skills: "" });
     try {
-      const res = await fetch("", { // api calls
-        method: "POST",
-        body: form,
-      });
-      if (res.ok) {
-        console.log("form sent");
-      } else {
-        console.log("error");
-      }
+      const res = await axios.post('api-call', form); // api-call
+    if (res.status === 200) {
+      console.log('Form sent');
+    } else {
+      console.log('Error');
+    }
     } catch (err) {
       console.error("Error", err);
     }
