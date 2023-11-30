@@ -1,5 +1,7 @@
+import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline';
 import React, { useState, useEffect } from "react";
 import 'flowbite';
+import axios from 'axios';
 
 function Three() {
 
@@ -12,14 +14,11 @@ function Three() {
 
     const fetchInfo = async () => {
         try {
-            const response = await fetch(url);
-            const result = await response.json();
-            setData(result);
+            const response = await axios.get(url); // Use Axios for GET request
+            setData(response.data);
         } catch (error) {
             console.error("Error fetching data:", error);
         }
-
-        // console. log(data);
     };
 
     const handle_click_accept = async (event, item, flag, type) => {
@@ -39,15 +38,11 @@ function Three() {
         email_body = flag ? "Selected for: " + type : "Rejected";
 
         try {
-            const response = await fetch('http://localhost:3001/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ data: email_body, to: email_id }),
+            const response = await axios.post('http://localhost:3001/send-email', {
+                data: email_body, to: email_id,
             });
 
-            if (response.ok) {
+            if (response.status === 200) {
                 console.log('Email sent successfully!');
 
                 flag && console.log("Interview type: ", type);
