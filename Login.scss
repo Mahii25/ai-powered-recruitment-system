@@ -1,0 +1,76 @@
+.login{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    .wrapper{
+        
+        h1{
+            font-size: 35px;
+            letter-spacing: 4px;
+        }
+        margin:auto;
+        height: 600px;
+        width:30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        border:solid 0.1px snow;
+        .inputbox{
+            // background-color: palegreen;
+            width:80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            input{
+                height:40px;
+                width:150%;
+                height: 100%;
+                padding:10px;
+                margin-right: 10px;
+                margin-bottom:-10px;
+                background-color: transparent;
+                border-radius: 12px;
+                color:wheat;
+                border:solid 1px wheat;
+                font-size: 18px;
+            }
+            input::placeholder{
+                font-size: 16px;
+                color:wheat;
+            }svg {
+                top: 50%;
+                margin-top: 10px;
+                color: white; /* Set the icon color to white */
+              }
+        }
+        button{
+            padding:10px 20px;
+            border-radius: 10px;
+            font-size: 18px;
+            background-color: transparent;
+            border: solid 0.1px snow;
+            color:snow;
+        }
+        a{
+            color:wheat;
+        }
+        a:hover{
+            padding-bottom: 2px;
+            border-bottom:solid 1px pink;
+        }
+        form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap:15px;
+        }
+
+    }
+
+    // background-color: #f4f4f4; /* Set your background color here */
+  }
