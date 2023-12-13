@@ -35,7 +35,37 @@ function Three() {
 
         if (!candidate.email) email_id = item.email;
 
-        email_body = flag ? "Selected for: " + type : "Rejected";
+        const sample_rejection_email_body = `
+        "Dear ${item.name},
+        
+        Thank you for your interest. We appreciate you taking the time to apply and participate in the ${type} round.
+        
+        We received a number of strong applications and after careful consideration, we have decided not to move forward with your candidacy at this time.
+          
+        We wish you the best of luck in your job search.
+        
+        Sincerely,
+        
+        The Hiring Team"`;
+
+        const sample_acceptance_email_body = `
+        "Dear ${candidate.name},
+        
+        We are thrilled to inform you that you have been selected for the ${type} round! 
+        
+        Your impressive skills and experience stood out during the interview process, and we believe you would be a valuable addition to our team.
+        
+        The start date and the compensation package would be discussed in further days.
+        
+        To accept this offer, please reply to this email and complete the attached onboarding documents. We look forward to welcoming you to the team!
+        
+        Congratulations again, and we're excited for you to join us!
+        
+        Sincerely,
+        
+        The Hiring Team"`;
+
+        email_body = flag ? sample_acceptance_email_body : sample_rejection_email_body;
 
         try {
             const response = await axios.post('http://localhost:3001/send-email', {
